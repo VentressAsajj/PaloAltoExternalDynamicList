@@ -1,0 +1,1 @@
+ # Configuración External Dynamic List
