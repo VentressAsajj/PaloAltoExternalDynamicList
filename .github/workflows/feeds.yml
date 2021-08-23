@@ -42,7 +42,9 @@ jobs:
         git status
         timestamp=$(date -u)
         git commit -m "Latest data: ${timestamp}" || exit 0
+        
     - name: Push
+      if: steps.check_changes.outputs.bigChange != 'true'
       run: |-
         git push
  
