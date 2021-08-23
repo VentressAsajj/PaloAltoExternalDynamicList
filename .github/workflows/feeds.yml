@@ -4,12 +4,6 @@ name: testAbuse
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the main branch
-  #push:
-    #branches: [ main ]
-  #pull_request:
-    #branches: [ main ]
-
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -25,14 +19,13 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - name: Check out this repo
       uses: actions/checkout@v2
-
-      # Runs a single command using the runners shell
+    #
     - name: Run a one-line script
       #run:  wget https://feodotracker.abuse.ch/downloads/ipblocklist_recommended.txt -P abuse-ch/ -O ipblocklist_recommended-ips.txt
       with:
          config: download-feeds.yml
          configSection: abuse_sh
-      
+    # commit
     - name: Commit
       run: |-
         git config user.name "Automated"
@@ -48,8 +41,8 @@ jobs:
       run: |-
         git push
  
-    - name: Create PR
-      if: steps.check_changes.outputs.bigChange == 'true'
-      uses: peter-evans/create-pull-request@v3.6.0
-      with:
-        branch: please-check-changes
+    #- name: Create PR
+      #if: steps.check_changes.outputs.bigChange == 'true'
+      #uses: peter-evans/create-pull-request@v3.6.0
+      #with:
+        #branch: please-check-changes
