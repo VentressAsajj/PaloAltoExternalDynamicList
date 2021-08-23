@@ -1,4 +1,4 @@
 abuse_sh:
   - name: download IP block list recommended
-    outputs: 
-        resultPath: abuse-ch/ipblocklist_recommended-ips.txt
+    outputs:
+       - resultPath: abuse-ch/ipblocklist_recommended-ips.txt
