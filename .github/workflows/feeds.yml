@@ -23,14 +23,15 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+    - name: Check out this repo
+      uses: actions/checkout@v2
 
       # Runs a single command using the runners shell
-      - name: Run a one-line script
-        #run:  wget https://feodotracker.abuse.ch/downloads/ipblocklist_recommended.txt -P abuse-ch/ -O ipblocklist_recommended-ips.txt
-        with:
-           config: download-feeds.yml
-           configSection: abuse_sh
+    - name: Run a one-line script
+      #run:  wget https://feodotracker.abuse.ch/downloads/ipblocklist_recommended.txt -P abuse-ch/ -O ipblocklist_recommended-ips.txt
+      with:
+         config: download-feeds.yml
+         configSection: abuse_sh
 
       # Runs a set of commands using the runners shell
       #- name: Run a multi-line script
