@@ -21,7 +21,11 @@ jobs:
       uses: actions/checkout@v2
     #
     - name: Run a one-line script
-      run:  wget https://feodotracker.abuse.ch/downloads/ipblocklist_recommended.txt -O abuse-ch/ipblocklist_recommended-ips.txt
+      env:
+         API: ${{ secrets.MALSHARE_API }}
+      run: |
+         echo "$API"
+      #run:  wget https://feodotracker.abuse.ch/downloads/ipblocklist_recommended.txt -O abuse-ch/ipblocklist_recommended-ips.txt
       #with:
          #config: download-feeds.yml
          #configSection: abuse_sh
