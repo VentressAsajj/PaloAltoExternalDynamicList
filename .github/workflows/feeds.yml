@@ -26,7 +26,7 @@ jobs:
          VAR1: Hola
          VAR2: Nuria
       run: |
-         echo $MALSHARE_API
+         echo ${{ secrets.MALSHARE_API }}
          echo $VAR1 $VAR2
       #run:  wget https://feodotracker.abuse.ch/downloads/ipblocklist_recommended.txt -O abuse-ch/ipblocklist_recommended-ips.txt
       #with:
