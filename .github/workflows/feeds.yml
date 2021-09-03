@@ -22,11 +22,12 @@ jobs:
     #
     - name: Run a one-line script
       env:
-         API: ${{secrets.MALSHARE_API}}
+         API: ${{ secrets.MALSHARE_API }}
+         API2: ${{ secrets.API }}
          VAR1: Hola
          VAR2: Nuria
       run: |
-         echo "$API"
+         echo "$API" "$API2"
          echo $VAR1 $VAR2
       #run:  wget https://feodotracker.abuse.ch/downloads/ipblocklist_recommended.txt -O abuse-ch/ipblocklist_recommended-ips.txt
       #with:
