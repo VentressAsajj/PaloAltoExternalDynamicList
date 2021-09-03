@@ -22,7 +22,7 @@ jobs:
     #
     - name: Run a one-line script
       env:
-         api: ${ secrets.MALSHARE_API }
+         api: $secrets.MALSHARE_API
          VAR1: Hola
          VAR2: Nuria
       run: |
